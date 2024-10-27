@@ -8,9 +8,10 @@ from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process.kernels import RBF, ConstantKernel as C
 
 # 设置中文字体
-plt.rcParams['font.sans-serif'] = ['SimHei']
+
+plt.rcParams['font.sans-serif'] = ['Microsoft YaHei', 'DejaVu Sans']
 plt.rcParams['axes.unicode_minus'] = False
-plt.rcParams['font.size'] = 18
+
 
 # Streamlit页面配置
 st.title("临界阴极保护电位计算 Web 应用")
