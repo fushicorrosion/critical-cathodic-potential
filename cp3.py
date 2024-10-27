@@ -6,10 +6,12 @@ from scipy.interpolate import interp1d
 from xgboost import XGBRegressor
 from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process.kernels import RBF, ConstantKernel as C
-import mplfonts
 
-# 使用 mplfonts 设置中文字体
-mplfonts.use_font('SimHei')  # 使用 SimHei 或替换为其他已安装的中文字体
+
+plt.rcParams['font.family'] = 'sans-serif'
+plt.rcParams['font.sans-serif'] = ['Microsoft YaHei']  # 或者 'SimHei'
+plt.rcParams['axes.unicode_minus'] = False
+
 
 # Streamlit页面配置
 st.title("临界阴极保护电位计算 Web 应用")
