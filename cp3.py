@@ -9,7 +9,7 @@ from sklearn.gaussian_process.kernels import RBF, ConstantKernel as C
 
 # 设置中文字体
 
-plt.rcParams['font.sans-serif'] = ['Microsoft YaHei', 'DejaVu Sans']
+plt.rcParams['font.sans-serif'] = ['Microsoft YaHei']
 plt.rcParams['axes.unicode_minus'] = False
 
 
