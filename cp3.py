@@ -124,31 +124,32 @@ if uploaded_file is not None:
         # 绘制图表
         plt.figure(figsize=(12, 8))
         plt.axvspan(0.1, 25, color='green', alpha=0.1)
-        plt.text(12.5, np.min(E_predicted), '安全区', fontsize=16, va='center', ha='center', color='green', alpha=1)
+        plt.text(12.5, np.min(E_predicted), 'Safe Zone', fontsize=16, va='center', ha='center', color='green', alpha=1)
         plt.axvspan(25, 35, color='yellow', alpha=0.1)
-        plt.text(30, np.min(E_predicted), '氢脆风险区', fontsize=16, va='center', ha='center', color='orange', alpha=1)
+        plt.text(30, np.min(E_predicted), 'Hydrogen Embrittlement Risk Zone', fontsize=16, va='center', ha='center', color='orange', alpha=1)
         plt.axvspan(35, 50, color='red', alpha=0.1)
-        plt.text(42.5, np.min(E_predicted), '氢脆断裂区', fontsize=16, va='center', ha='center', color='red', alpha=1)
-
-        plt.plot(FH_range_valid, E_predicted, label='阴极保护电位 vs. 氢脆敏感性', color='blue')
-
+        plt.text(42.5, np.min(E_predicted), 'Hydrogen Fracture Zone', fontsize=16, va='center', ha='center', color='red', alpha=1)
+        
+        plt.plot(FH_range_valid, E_predicted, label='Cathodic Protection Potential vs. Hydrogen Sensitivity', color='blue')
+        
         # 绘制 FHmax 和 FHmin 的虚线
         plt.axhline(y=FHmax, color='red', linestyle='--')
         plt.axhline(y=FHmin, color='red', linestyle='--')
-
+        
         # 在图上标记 FH=25 的点
         plt.scatter([FH_critical], [E_critical_CSE], color='red', s=100, zorder=5)
         plt.text(FH_critical, E_critical_CSE, f'  (FH={FH_critical}%, E={E_critical_CSE:.2f} V)', fontsize=20,
                  va='bottom', ha='left', color='red')
         plt.xlim(0, 50)
-        plt.xlabel('氢脆敏感性系数（%）')
-        plt.ylabel('阴极保护电位 (V vs. CSE)')
-        plt.title('阴极保护电位 vs. 氢脆敏感性系数')
+        plt.xlabel('Hydrogen Sensitivity Coefficient (%)')
+        plt.ylabel('Cathodic Protection Potential (V vs. CSE)')
+        plt.title('Cathodic Protection Potential vs. Hydrogen Sensitivity Coefficient')
         plt.legend()
         plt.grid(True, which='both', linestyle='--', linewidth=0.5)
-
+        
         # 显示图表
         st.pyplot(plt)
+
 
     except Exception as e:
         st.error(f"请等待")
