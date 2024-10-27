@@ -9,7 +9,7 @@ from sklearn.gaussian_process.kernels import RBF, ConstantKernel as C
 
 
 plt.rcParams['font.family'] = 'sans-serif'
-plt.rcParams['font.sans-serif'] = ['STHeiti']  # 或者 'SimHei'
+plt.rcParams['font.sans-serif'] = ['Noto Sans CJK']  # 或者 'SimHei'
 plt.rcParams['axes.unicode_minus'] = False
 
 
